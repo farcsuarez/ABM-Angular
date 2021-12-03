@@ -1,0 +1,34 @@
+<div class="card m-2 w-50">
+   <div class="card-body">
+      <div class="d-flex justify-content-between">
+         <h4 class="card-title">Categorías</h4>
+         <button type="button" class="btn btn-info" routerLink="/categForm/0/alta" routerLinkActive="router-link-active" ><i class="far fa-plus-square"></i></button>
+      </div>
+      <div class="alert alert-warning mt-4" role="alert" *ngIf="list == undefined">
+         <strong>No hay REGISTROS!</strong>
+      </div>
+      
+      <table class="table table-striped" *ngIf="list != undefined">
+         <thead>
+            <tr>
+               <th>id</th>
+               <th>categoria</th>
+               <th class="left col-1">edit</th>
+               <th class="left col-1">delete</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let item of list">
+               <td>{{item.id}}</td>
+               <td>{{item.detalle}}</td>
+               <td class="left col-1">
+                  <i class="fas fa-edit edit" routerLink="/categForm/{{item.id}}/editar"></i>
+               </td>
+               <td class="left col-1">
+                  <i class="fas fa-trash delete" routerLink="/categForm/{{item.id}}/eliminar"></i>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card text-start m-2 w-50">
+   <div class="card-body">
+      <h5 class="card-title">
+         <div class="d-flex justify-content-between">
+            <h4>Categorias Form</h4>
+            <span class="badge rounded-pill bg-info" *ngIf="accion != 'eliminar'">{{accion}}</span>
+            <span class="badge rounded-pill bg-danger" *ngIf="accion == 'eliminar'">{{accion}}</span>
+         </div>
+      </h5>
+      <form [formGroup]="f" (ngSubmit)="submit()">
+         <div class="mb-3">
+            <label for="" class="form-label">Categoría</label>
+            <input type="text" formControlName="detalle" class="form-control" placeholder="de 4 a 25 caracteres">
+         </div>
+         <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary" *ngIf="accion != 'eliminar'">enviar</button>
+            <button type="submit" class="btn btn-danger" *ngIf="accion == 'eliminar'">Confirma ELIMINAR?</button>
+            <button type="button" class="btn btn-dark" routerLink="/categList" routerLinkActive="router-link-active" > cancelar</button>
+         </div>
+      </form>
+   </div>
+</div>
