@@ -1,0 +1,33 @@
+<div class="card border-light m-2 w-50">
+   <img class="card-img-top">
+   <div class="card-body">
+      <div class="d-flex justify-content-between">
+         <h4 class="card-title">Artículos Form</h4>
+         <span class="badge rounded-pill bg-info" *ngIf="accion != 'eliminar'">{{accion}}</span>
+         <span class="badge rounded-pill bg-danger" *ngIf="accion == 'eliminar'">{{accion}}</span>
+      </div>
+
+      <form [formGroup]="f" (ngSubmit)="submit()">
+         <div class="mb-3 w-25">
+            <label for="" class="form-label">Código</label>
+            <input type="text" class="form-control" formControlName="codigo" placeholder="6 caracteres">
+         </div>
+         <div class="mb-3 w-50">
+            <label for="id_categoria" class="form-label">Seleccione Categoría</label>
+            <select class="form-select" formControlName="id_categoria">
+               <option *ngFor="let c of categorias" value={{c.id}}>{{c.detalle}}</option>
+            </select>
+         </div>
+         <div class="mb-3">
+            <label for="" class="form-label">Detalle/descripción</label>
+            <input type="text" class="form-control" formControlName="detalle" placeholder="hasta 30 caracteres">
+         </div>
+         <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary" *ngIf="accion != 'eliminar'">Enviar</button>
+            <button type="submit" class="btn btn-danger" *ngIf="accion == 'eliminar'">Confirma ELIMINAR?</button>
+            <button type="button" class="btn btn-dark" routerLink="/articulosList" routerLinkActive="router-link-active">
+               cancelar</button>
+         </div>
+      </form>
+   </div>
+</div>

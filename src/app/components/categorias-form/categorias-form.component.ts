@@ -67,6 +67,8 @@ export class CategoriasFormComponent implements OnInit {
       this.categoria.detalle = this.f.get('detalle')?.value
       this.serv.del_art_categorias(this.categoria.id).subscribe(() => {
         this.ruteador.navigateByUrl('/categList')
+
+       
         this.toast.warning('Eliminación exitosa!', 'Operaciones con Registros')
       })
     }

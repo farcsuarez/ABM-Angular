@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { ArticulosListaComponent } from './components/articulos-lista/articulos-lista.component';
+import { ArticulosFormComponent } from './components/articulos-form/articulos-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ToastrModule } from 'ngx-toastr';
     NavbarComponent,
     TcategoriasComponent,
     CategoriasListaComponent,
-    CategoriasFormComponent
+    CategoriasFormComponent,
+    ArticulosListaComponent,
+    ArticulosFormComponent
   ],
   imports: [
     BrowserModule,
