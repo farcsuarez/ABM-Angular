@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 import { ServicioService } from 'src/app/servicio.service';
 
 @Component({
@@ -7,13 +8,12 @@ import { ServicioService } from 'src/app/servicio.service';
   styleUrls: ['./tcategorias.component.css']
 })
 export class TcategoriasComponent implements OnInit {
- 
+
   constructor(private serv: ServicioService) { }
 
   ngOnInit(): void {
     
-    
   }
 
-  
+
 }
